@@ -100,9 +100,10 @@ input:focus-visible,button:focus-visible,select:focus-visible{outline:none;borde
 <div id="v"></div>
 </main>
 <script>
-const K='cc-costos-v4';
+const K='cc-costos-v9';
 const L=(r,c,uc)=>({t:'i',r,c,uc:uc||'b'});
 const LP=(r,c)=>({t:'p',r,c,uc:'b'});
+const LQ=(r,c)=>({t:'q',r,c,uc:'b'});
 const D={nid:100,nf:14,t:0,sel:0,
 ing:[
 {id:1,n:'Suprema de pollo',u:'g',pp:11000,cp:1000,cda:0,e:0},
@@ -125,16 +126,24 @@ ing:[
 {id:18,n:'Miel (por gramo; 1 ml ≈ 1,4 g)',u:'g',pp:12000,cp:1000,cda:0,e:0},
 {id:19,n:'Salsa de soja',u:'ml',pp:7800,cp:960,cda:0,e:0},
 {id:20,n:'Aceite de sésamo',u:'ml',pp:7000,cp:150,cda:0,e:0},
-{id:21,n:'Arroz (estimado por porción)',u:'u',pp:500,cp:1,cda:0,e:1},
-{id:22,n:'Naranja (estimado por porción)',u:'u',pp:500,cp:1,cda:0,e:1},
+{id:21,n:'Arroz',u:'g',pp:1500,cp:1000,cda:0,e:0},
+{id:22,n:'Naranja (por porción)',u:'u',pp:250,cp:1,cda:0,e:0},
 {id:23,n:'Pimienta en granos',u:'g',pp:15000,cp:1000,cda:0,e:1},
-{id:24,n:'Queso rallado (55 ml, estimado)',u:'u',pp:1000,cp:1,cda:0,e:1},
+{id:24,n:'Queso rallado',u:'g',pp:2700,cp:100,cda:0,e:0},
 {id:25,n:'Bandeja teriyaki',u:'u',pp:200,cp:1,cda:0,e:1},
 {id:26,n:'Bolsa cobertora',u:'u',pp:100,cp:1,cda:0,e:1},
 {id:27,n:'Semillas de sésamo (estimado por porción)',u:'u',pp:200,cp:1,cda:0,e:1},
 {id:28,n:'Pimientos (tanda de picante)',u:'u',pp:2250,cp:1,cda:0,e:0},
 {id:29,n:'Tomate (tanda de picante)',u:'u',pp:500,cp:1,cda:0,e:0},
-{id:30,n:'Ají (tanda de picante)',u:'u',pp:100,cp:1,cda:0,e:0}],
+{id:30,n:'Ají (tanda de picante)',u:'u',pp:100,cp:1,cda:0,e:0},
+{id:31,n:'Salsa cheddar',u:'g',pp:20000,cp:1500,cda:0,e:0},
+{id:32,n:'Panceta',u:'g',pp:1700,cp:100,cda:0,e:0},
+{id:33,n:'Bandeja de aluminio grande',u:'u',pp:230,cp:1,cda:0,e:0},
+{id:34,n:'Muzzarella',u:'g',pp:1700,cp:100,cda:0,e:0},
+{id:35,n:'Pan de sándwich (estimado hacia arriba)',u:'u',pp:500,cp:1,cda:0,e:1},
+{id:36,n:'Chutney (estimado por sándwich)',u:'u',pp:236,cp:1,cda:0,e:1},
+{id:37,n:'Caja de sándwich',u:'u',pp:105,cp:1,cda:0,e:0},
+{id:38,n:'Envoltorio (estimado)',u:'u',pp:100,cp:1,cda:0,e:1}],
 prep:[
 {id:1,n:'Marinada',rinde:800,u:'g de pollo',lin:[L(3,2,'cdita'),L(4,6,'cda'),L(5,4,'cda'),L(6,1,'cdita'),L(7,1,'cda'),L(8,2,'cda'),L(9,1),L(10,1)]},
 {id:2,n:'Salsa Crazy',rinde:250,u:'ml',e:0,lin:[L(13,180),L(14,60),L(15,10)]},
@@ -144,14 +153,15 @@ prep:[
 {id:6,n:'Salsa del Pollo Frito (mitad Crazy, mitad Chicfila)',rinde:55,u:'ml (1 potecito)',e:0,lin:[LP(2,27.5),LP(3,27.5)]},
 {id:7,n:'Salsa picante',rinde:6.5,u:'potecitos',e:1,lin:[L(28,1),L(29,1),L(30,1)]}],
 prod:[
-{id:1,n:'Pollo Frito',p:14000,m:55,lin:[L(1,365),L(2,350),LP(1,365),L(11,1),L(12,1),LP(6,55)]},
-{id:2,n:'Pollo Teriyaki',p:13000,m:60,lin:[L(1,316),L(21,1),L(19,80),L(22,1),L(18,21),L(20,15),L(23,2),L(24,1),L(25,1),L(12,1),L(26,1),L(27,1),LP(5,5)]},
-{id:3,n:'Papas Crazy',p:10500,m:0,lin:[]},
-{id:4,n:'Combo Crazy',p:25000,m:0,lin:[]},
-{id:5,n:'Combo Primo',p:23000,m:0,lin:[]},
-{id:6,n:'Combo Cumpa',p:26000,m:0,lin:[]},
-{id:7,n:'Sándwich De la Tía',p:14000,m:0,lin:[]},
-{id:8,n:'Sándwich Del Tío',p:14000,m:0,lin:[]}],
+{id:1,n:'Pollo Frito',p:14000,m:55,lin:[L(1,365),L(2,350),LP(1,365),L(11,1),L(12,1),L(38,1),LP(6,55)]},
+{id:9,n:'Pollo Frito XL (precio provisorio)',p:15000,m:55,lin:[L(1,550),LP(1,550),L(11,1),L(12,1),L(38,1),LP(6,55)]},
+{id:2,n:'Pollo Teriyaki',p:13000,m:55,lin:[L(1,316),L(21,120),L(19,30),L(22,1),L(18,21),L(20,8),L(23,2),L(24,15),L(25,1),L(12,1),L(26,1),L(27,1),LP(5,5)]},
+{id:3,n:'Papas Crazy',p:10500,m:60,lin:[L(2,650),L(31,80),L(32,80),L(33,1),L(26,1)]},
+{id:4,n:'Combo Crazy',p:25000,m:50,peso:2,lin:[LQ(1,1),LQ(2,1)]},
+{id:5,n:'Combo Primo',p:23000,m:50,peso:2,lin:[LQ(9,1),LQ(3,1)]},
+{id:6,n:'Combo Cumpa',p:26000,m:50,peso:2,lin:[L(35,2),L(1,250),LP(4,60),LP(1,365),L(32,40),L(36,2),L(37,2),L(38,2),L(2,300),L(34,20),L(31,20)]},
+{id:7,n:'Sándwich De la Tía',p:14000,m:65,lin:[L(35,1),L(1,125),LP(4,30),LP(1,182.5),L(32,20),L(36,1),L(37,1),L(38,1),L(2,300),L(34,20)]},
+{id:8,n:'Sándwich Del Tío',p:14000,m:65,lin:[L(35,1),L(1,125),LP(4,30),LP(1,182.5),L(32,20),L(36,1),L(37,1),L(38,1),L(2,300),L(31,20)]}],
 rec:[{n:'Aceite de freír (bidón 4,5 L)',m:15000,k:2}]};
 let S;try{S=JSON.parse(localStorage.getItem(K))}catch(e){}
 if(!S||!S.prod)S=JSON.parse(JSON.stringify(D));
@@ -161,17 +171,18 @@ const f2=n=>'$'+n.toLocaleString('es-AR',{minimumFractionDigits:2,maximumFractio
 const pc=n=>isFinite(n)?(Math.round(n*1000)/10).toLocaleString('es-AR')+'%':'–';
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 const ING=id=>S.ing.find(x=>x.id===id),PRE=id=>S.prep.find(x=>x.id===id);
+const busy=new Set();
 const baseQty=(g,l)=>l.uc==='cda'?l.c*(g.cda||0):l.uc==='cdita'?l.c*(g.cda||0)/3:l.c;
 const lineCost=l=>{
+ if(l.t==='q'){const x=S.prod.find(y=>y.id===l.r);if(!x||busy.has('q'+x.id))return 0;busy.add('q'+x.id);try{return sumL(x.lin)*l.c}finally{busy.delete('q'+x.id)}}
  if(l.t==='p'){const p=PRE(l.r);return p&&p.rinde?prepCost(p)/p.rinde*l.c:0}
  const g=ING(l.r);return g&&g.cp?g.pp/g.cp*baseQty(g,l):0};
 const sumL=lin=>lin.reduce((a,l)=>a+lineCost(l),0);
-const busy=new Set();
 const prepCost=p=>{if(busy.has(p.id))return 0;busy.add(p.id);try{return sumL(p.lin)}finally{busy.delete(p.id)}};
 const weekly=()=>S.rec.reduce((a,r)=>a+(r.k>0?r.m/r.k:0),0);
 const shared=()=>S.nf>0?weekly()/S.nf:0;
-const calc=x=>{const d=sumL(x.lin),c=d+shared(),g=x.p-c,mg=x.p?g/x.p:0,den=1-x.m/100;
- return{d,c,g,mg,sug:den>0?Math.ceil(c/den/500)*500:0}};
+const calc=x=>{const sh=shared()*(x.peso||1),d=sumL(x.lin),c=d+sh,g=x.p-c,mg=x.p?g/x.p:0,den=1-x.m/100;
+ return{d,sh,c,g,mg,sug:den>0?Math.ceil(c/den/500)*500:0}};
 const U=(k,i,fl,el,num)=>{S[k][i][fl]=num?(el.valueAsNumber||0):el.value;R()};
 const UL=(k,i,j,fl,el,num)=>{S[k][i].lin[j][fl]=num?(el.valueAsNumber||0):el.value;R()};
 const US=(k,i,j,el)=>{const l=S[k][i].lin[j];l.t=el.value[0];l.r=+el.value.slice(1);l.uc='b';R()};
@@ -186,6 +197,7 @@ const add=k=>{
  if(k==='rec')S.rec.push({n:'Gasto',m:0,k:1});R()};
 const del=(k,i)=>{
  if(k==='ing'){const id=S.ing[i].id;S.prod.concat(S.prep).forEach(x=>x.lin=x.lin.filter(l=>!(l.t==='i'&&l.r===id)))}
+ if(k==='prod'){const id=S.prod[i].id;S.prod.forEach(x=>x.lin=x.lin.filter(l=>!(l.t==='q'&&l.r===id)))}
  if(k==='prep'){const id=S.prep[i].id;S.prod.concat(S.prep).forEach(x=>x.lin=x.lin.filter(l=>!(l.t==='p'&&l.r===id)))}
  S[k].splice(i,1);if(S.sel>=S.prod.length)S.sel=Math.max(0,S.prod.length-1);R()};
 const reset=()=>{if(confirm('¿Volver a los valores iniciales? Se pierden tus cambios.')){S=JSON.parse(JSON.stringify(D));R()}};
@@ -194,11 +206,11 @@ const state=(x,r)=>r.mg>=x.m/100-1e-9?['ok','En objetivo']:r.mg>=0?['warn','Subi
 
 function LE(k,i,lin,pa){
  const tot=sumL(lin)||1;
- const opts=cur=>S.ing.map(g=>`<option value="i${g.id}" ${cur==='i'+g.id?'selected':''}>${esc(g.n)}</option>`).join('')+
+ const opts=cur=>(k==='prod'?S.prod.filter((p,j)=>j!==i).map(p=>`<option value="q${p.id}" ${cur==='q'+p.id?'selected':''}>Producto · ${esc(p.n)}</option>`).join(''):'')+S.ing.map(g=>`<option value="i${g.id}" ${cur==='i'+g.id?'selected':''}>${esc(g.n)}</option>`).join('')+
   (S.prep.filter(p=>!(k==='prep'&&S.prep[i]===p)).map(p=>`<option value="p${p.id}" ${cur==='p'+p.id?'selected':''}>Preparación · ${esc(p.n)}</option>`).join(''));
  const rows=lin.map((l,j)=>{
-  const g=l.t==='i'?ING(l.r):null,p=l.t==='p'?PRE(l.r):null,o=(v,t)=>`<option value="${v}" ${l.uc===v?'selected':''}>${t}</option>`,c=lineCost(l);
-  const un=g?`<select onchange="UL('${k}',${i},${j},'uc',this)">${o('b',esc(g.u))}${g.cda?o('cda','cucharada')+o('cdita','cucharita'):''}</select>`:`<span class="mut">${p?esc(p.u):''}</span>`;
+  const g=l.t==='i'?ING(l.r):null,p=l.t==='p'?PRE(l.r):null,pq=l.t==='q',o=(v,t)=>`<option value="${v}" ${l.uc===v?'selected':''}>${t}</option>`,c=lineCost(l);
+  const un=g?`<select onchange="UL('${k}',${i},${j},'uc',this)">${o('b',esc(g.u))}${g.cda?o('cda','cucharada')+o('cdita','cucharita'):''}</select>`:`<span class="mut">${pq?'unidad':p?esc(p.u):''}</span>`;
   return `<div class="line" style="--w:${Math.min(100,c/tot*100).toFixed(1)}%"><select onchange="US('${k}',${i},${j},this)">${opts(l.t+l.r)}</select>
   <input type="number" step="any" value="${l.c}" aria-label="Cantidad" onchange="UL('${k}',${i},${j},'c',this,1)">${un}
   <b class="lc">${f(c)}</b><button class="x" aria-label="Quitar" onclick="delL('${k}',${i},${j})">×</button></div>`}).join('');
@@ -213,11 +225,11 @@ function vRes(){
    <label class="f">Margen objetivo %<input type="number" value="${x.m}" onchange="U('prod',${j},'m',this,1)"></label></div>`;
   if(!x.lin.length)return `<article class="card empty"><div class="ph">${nm}<span class="chip mut">Sin receta</span></div>
    ${inp}<p>Todavía no tiene receta, así que no se puede calcular el margen.</p><div class="foot"><span></span><a onclick="S.sel=${j};S.t=1;R()">Cargar receta →</a></div></article>`;
-  const r=calc(x),st=state(x,r),P=x.p||1,w1=Math.min(100,r.d/P*100),w2=Math.min(100-w1,sh/P*100),w3=Math.max(0,100-w1-w2);
+  const r=calc(x),st=state(x,r),P=x.p||1,w1=Math.min(100,r.d/P*100),w2=Math.min(100-w1,r.sh/P*100),w3=Math.max(0,100-w1-w2);
   return `<article class="card prod"><div class="ph">${nm}<span class="chip ${st[0]}">${st[1]}</span></div>
   <div class="mid"><div class="ring" style="--p:${Math.max(0,Math.min(100,r.mg*100)).toFixed(1)}"><div><b>${pc(r.mg)}</b><small>margen</small></div></div>${inp}</div>
   <div class="bar" title="De cada peso que cobrás"><i class="b1" style="width:${w1}%"></i><i class="b2" style="width:${w2}%"></i><i class="b3" style="width:${w3}%"></i></div>
-  <div class="leg"><span><u style="background:#f6f3ee"></u>Ingredientes <b>${f(r.d)}</b></span><span><u style="background:#8a4a22"></u>Compartidos <b>${f(sh)}</b></span><span><u style="background:var(--ac)"></u>Ganancia <b class="${r.g<0?'bad':''}">${f(r.g)}</b></span></div>
+  <div class="leg"><span><u style="background:#f6f3ee"></u>Ingredientes <b>${f(r.d)}</b></span><span><u style="background:#8a4a22"></u>Compartidos <b>${f(r.sh)}</b></span><span><u style="background:var(--ac)"></u>Ganancia <b class="${r.g<0?'bad':''}">${f(r.g)}</b></span></div>
   <div class="foot"><span>Precio para ${x.m}%<br><b>${f(r.sug)}</b>${r.sug>x.p?` <small class="warn">+${f(r.sug-x.p)}</small>`:''}</span><a onclick="S.sel=${j};S.t=1;R()">Ver receta →</a></div></article>`}).join('');
  return `${est||pe?`<div class="alert"><span>⚠</span><span>Hay ${est} insumo(s) y ${pe} preparación(es) con datos estimados (marcados en <b>Insumos</b> y <b>Preparaciones</b>: precios, cucharadas, cuántas porciones rinde una tanda). Los márgenes son tan confiables como esos datos.</span></div>`:''}
  <div class="grid">${cards}</div>
@@ -232,8 +244,9 @@ function vRec(){
  return `<div class="row"><label class="f" style="flex:1;min-width:200px">Producto<select onchange="S.sel=+this.value;R()">${sel}</select></label>
  <label class="f" style="width:130px">Precio de venta<input type="number" value="${x.p}" onchange="U('prod',S.sel,'p',this,1)"></label>
  <label class="f" style="width:130px">Margen objetivo %<input type="number" value="${x.m}" onchange="U('prod',S.sel,'m',this,1)"></label>
+ <label class="f" style="width:150px" title="Cuántos productos 'consumen' gastos compartidos (aceite, etc). Un combo de 2 productos = 2.">Peso gastos comp.<input type="number" step="any" value="${x.peso||1}" onchange="U('prod',S.sel,'peso',this,1)"></label>
  <button class="x" onclick="if(confirm('¿Borrar este producto?'))del('prod',S.sel)">Borrar ×</button></div>
- ${x.lin.length?`<div class="kpi"><div><small>Ingredientes</small><b>${f(r.d)}</b></div><div><small>Gastos compartidos</small><b>${f(shared())}</b></div><div><small>Costo total</small><b>${f(r.c)}</b></div><div><small>Ganancia</small><b class="${cl}">${f(r.g)}</b></div><div><small>Margen</small><b class="${cl}">${pc(r.mg)}</b></div><div class="hi"><small>Precio para ${x.m}%</small><b>${f(r.sug)}</b></div></div>`:''}
+ ${x.lin.length?`<div class="kpi"><div><small>Ingredientes</small><b>${f(r.d)}</b></div><div><small>Gastos compartidos</small><b>${f(r.sh)}</b></div><div><small>Costo total</small><b>${f(r.c)}</b></div><div><small>Ganancia</small><b class="${cl}">${f(r.g)}</b></div><div><small>Margen</small><b class="${cl}">${pc(r.mg)}</b></div><div class="hi"><small>Precio para ${x.m}%</small><b>${f(r.sug)}</b></div></div>`:''}
  ${LE('prod',S.sel,x.lin,true)}
  <p class="note">Las preparaciones (marinada, salsas) se cargan una vez en su pestaña y acá se usan por la cantidad que lleva cada porción. Ejemplo: la marinada rinde 800 g de pollo, así que 365 g de pollo usan 365 de marinada. La barra naranja de cada línea muestra cuánto pesa en el costo.</p>`}
 
