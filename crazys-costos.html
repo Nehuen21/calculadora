@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crazy's Chicken · Costos y márgenes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0a0a0b;--s1:#141416;--s2:#1d1d20;--bd:#2c2c31;--fg:#f6f3ee;--mut:#9b9aa3;--ac:#ff6a13;--ac2:#ffa05c;--ok:#3ddc97;--warn:#ffc233;--bad:#ff5a5a;--r:18px;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;color:var(--fg);font:400 15px/1.45 Inter,system-ui,sans-serif;background:radial-gradient(900px 420px at 88% -8%,rgba(255,106,19,.20),transparent 62%),radial-gradient(600px 300px at -5% 30%,rgba(255,106,19,.06),transparent 70%),var(--bg);background-attachment:fixed;min-height:100vh}
+main{max-width:1080px;margin:0 auto;padding:22px 16px 56px}
+h1,h2,.disp{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.03em}
+.hero{display:flex;gap:20px;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;margin-bottom:18px}
+.eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ac);margin-bottom:2px}
+h1{font-size:clamp(44px,8vw,72px);line-height:.92;margin:0}
+h1 em{font-style:normal;color:var(--ac)}
+.sub{color:var(--mut);margin:8px 0 0;max-width:46ch}
+.hs{display:flex;gap:10px;flex-wrap:wrap}
+.hs div{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:10px 16px;min-width:116px}
+.hs small{display:block;color:var(--mut);font-size:12px}
+.hs b{font:400 30px/1 'Bebas Neue',sans-serif;letter-spacing:.03em}
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;flex-wrap:wrap;padding:10px 0;margin-bottom:14px;background:linear-gradient(var(--bg) 70%,transparent)}
+.tabs button{padding:9px 18px;border:1px solid var(--bd);background:var(--s1);color:var(--mut);font:600 14px Inter,sans-serif;cursor:pointer;border-radius:99px;transition:.15s}
+.tabs button:hover{color:var(--fg);border-color:var(--ac)}
+.tabs button.on{background:var(--ac);color:#140900;border-color:var(--ac)}
+h2{font-size:30px;margin:26px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{position:relative;background:linear-gradient(180deg,var(--s1),#101012);border:1px solid var(--bd);border-radius:var(--r);padding:18px;overflow:hidden;transition:.18s}
+.card:hover{border-color:#44444b;transform:translateY(-2px)}
+.prod::after{content:"";position:absolute;right:-50px;top:-50px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,19,.22),transparent 70%);pointer-events:none}
+.ph{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.name{font:400 28px/1 'Bebas Neue',sans-serif!important;letter-spacing:.04em;border-color:transparent!important;background:transparent!important;padding:2px 4px!important;margin-left:-4px;min-width:0}
+.name:hover,.name:focus{border-color:var(--bd)!important}
+.chip{padding:3px 11px;border-radius:99px;font-size:12px;font-weight:700;border:1px solid currentColor;white-space:nowrap;background:rgba(0,0,0,.25)}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}.mut{color:var(--mut)}
+.mid{display:flex;gap:16px;align-items:center;margin-bottom:14px}
+.ring{--p:0;flex:none;width:104px;height:104px;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(closest-side,#121214 74%,transparent 76% 100%),conic-gradient(var(--ac) calc(var(--p)*1%),#2c2c31 0)}
+.ring b{font:400 34px/.9 'Bebas Neue',sans-serif;letter-spacing:.02em}
+.ring small{display:block;font-size:11px;color:var(--mut)}
+.fl{display:grid;gap:8px;flex:1;min-width:0}
+label.f{display:flex;flex-direction:column;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);gap:3px}
+.bar{display:flex;height:10px;border-radius:99px;overflow:hidden;background:#2c2c31;gap:2px}
+.bar i{display:block;height:100%}
+.b1{background:#f6f3ee}.b2{background:#8a4a22}.b3{background:var(--ac)}
+.leg{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--mut);margin:8px 0 12px}
+.leg u{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;text-decoration:none}
+.leg b{color:var(--fg);font-weight:600}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px dashed var(--bd);padding-top:12px;font-size:13px;color:var(--mut)}
+.foot b{font:400 26px/1 'Bebas Neue',sans-serif;letter-spacing:.03em;color:var(--fg)}
+.foot a{color:var(--ac);font-weight:600;cursor:pointer;text-decoration:none}
+.empty{border-style:dashed;display:flex;flex-direction:column;gap:10px;justify-content:space-between}
+.empty p{margin:0;color:var(--mut)}
+input,select{font:inherit;color:var(--fg);background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:8px 10px;width:100%;min-width:0;transition:.15s}
+select option{background:#1d1d20;color:#f6f3ee}
+input[type=number]{text-align:right;-moz-appearance:textfield}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input:hover,select:hover{border-color:#44444b}
+input:focus-visible,button:focus-visible,select:focus-visible{outline:none;border-color:var(--ac);box-shadow:0 0 0 3px rgba(255,106,19,.25)}
+.x{border:0;background:none;color:var(--mut);cursor:pointer;font-size:20px;line-height:1;border-radius:8px;padding:4px 8px}
+.x:hover{color:var(--bad);background:rgba(255,90,90,.1)}
+.add{margin-top:12px;padding:9px 18px;border:1px dashed #55555d;background:none;color:var(--fg);border-radius:99px;cursor:pointer;font:600 14px Inter,sans-serif;transition:.15s}
+.add:hover{border-color:var(--ac);color:var(--ac)}
+.note{color:var(--mut);font-size:13px;margin:14px 0;max-width:80ch}
+.alert{display:flex;gap:10px;align-items:flex-start;border:1px solid rgba(255,106,19,.35);background:rgba(255,106,19,.08);border-radius:14px;padding:10px 14px;margin:0 0 14px;color:#ffd9bd}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0}
+.kpi div{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:12px 14px}
+.kpi small{display:block;color:var(--mut);font-size:12px}
+.kpi b{font:400 32px/1.1 'Bebas Neue',sans-serif;letter-spacing:.03em}
+.kpi .hi{background:linear-gradient(135deg,var(--ac),#ff8a3d);border-color:transparent;color:#140900}.kpi .hi small{color:rgba(20,9,0,.7)}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:10px}
+.row>label{min-width:130px}
+.lines{display:grid;gap:6px}
+.line{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 92px 118px 78px 30px;gap:8px;align-items:center;padding:8px 10px;border-radius:14px;background:var(--s1);border:1px solid var(--bd);overflow:hidden}
+.line::before{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:linear-gradient(90deg,rgba(255,106,19,.26),rgba(255,106,19,.04));pointer-events:none}
+.line>*{position:relative}
+.lc{text-align:right;font:400 22px/1 'Bebas Neue',sans-serif;letter-spacing:.03em;color:var(--ac2)}
+.ltot{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;margin-top:6px;border-radius:14px;background:var(--fg);color:#140900;font-weight:700}
+.ltot b{font:400 28px/1 'Bebas Neue',sans-serif;letter-spacing:.03em}
+.big{font:400 34px/1 'Bebas Neue',sans-serif;letter-spacing:.03em;color:var(--ac)}
+.cap{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.tog{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-size:12px;color:var(--mut)}
+.tog input{width:auto;min-width:0;accent-color:var(--ac)}
+.cx{position:absolute;right:8px;top:8px;z-index:1}
+@media (max-width:640px){
+ .line{grid-template-columns:1fr 1fr 30px;}
+ .line>:first-child{grid-column:1/-1}
+ .line .lc{grid-column:1/3;text-align:left}
+ .tabs{overflow-x:auto;flex-wrap:nowrap}.tabs button{white-space:nowrap}
+ .mid{flex-direction:column;align-items:stretch}.ring{align-self:center}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body><main>
+<header class="hero">
+ <div><span class="eyebrow">Costos &amp; márgenes</span><h1>Crazy's <em>Chicken</em></h1>
+ <p class="sub">Cuánto cuesta cada producto, cuánto ganás y a qué precio venderlo para llegar a tu margen.</p></div>
+ <div class="hs" id="hs"></div>
+</header>
+<nav class="tabs" id="tabs"></nav>
+<div id="v"></div>
+</main>
+<script>
+const K='cc-costos-v4';
+const L=(r,c,uc)=>({t:'i',r,c,uc:uc||'b'});
+const LP=(r,c)=>({t:'p',r,c,uc:'b'});
+const D={nid:100,nf:14,t:0,sel:0,
+ing:[
+{id:1,n:'Suprema de pollo',u:'g',pp:11000,cp:1000,cda:0,e:0},
+{id:2,n:'Papa',u:'g',pp:2500,cp:1000,cda:0,e:0},
+{id:3,n:'Pimentón',u:'g',pp:1000,cp:100,cda:7,e:1},
+{id:4,n:'Harina',u:'g',pp:1500,cp:1000,cda:9,e:1},
+{id:5,n:'Almidón de maíz',u:'g',pp:1500,cp:300,cda:8,e:1},
+{id:6,n:'Ajo en polvo',u:'g',pp:1500,cp:100,cda:9,e:1},
+{id:7,n:'Polvo Royal',u:'g',pp:1500,cp:200,cda:10,e:1},
+{id:8,n:'Tomillo',u:'g',pp:2000,cp:100,cda:2,e:1},
+{id:9,n:'Pimienta + cayena (estimado por tanda)',u:'u',pp:300,cp:1,cda:0,e:1},
+{id:10,n:'Pan rallado (paquete = 3 tandas)',u:'u',pp:1500,cp:3,cda:0,e:0},
+{id:11,n:'Caja',u:'u',pp:105,cp:1,cda:0,e:0},
+{id:12,n:'Tapa de salsa',u:'u',pp:125,cp:1,cda:0,e:0},
+{id:13,n:'Mayonesa',u:'ml',pp:9800,cp:2700,cda:0,e:0},
+{id:14,n:'Ketchup',u:'ml',pp:1300,cp:150,cda:0,e:0},
+{id:15,n:'Salsa inglesa',u:'ml',pp:4800,cp:280,cda:0,e:0},
+{id:16,n:'Salsa barbacoa',u:'ml',pp:4500,cp:500,cda:0,e:0},
+{id:17,n:'Mostaza',u:'ml',pp:1000,cp:250,cda:0,e:0},
+{id:18,n:'Miel (por gramo; 1 ml ≈ 1,4 g)',u:'g',pp:12000,cp:1000,cda:0,e:0},
+{id:19,n:'Salsa de soja',u:'ml',pp:7800,cp:960,cda:0,e:0},
+{id:20,n:'Aceite de sésamo',u:'ml',pp:7000,cp:150,cda:0,e:0},
+{id:21,n:'Arroz (estimado por porción)',u:'u',pp:500,cp:1,cda:0,e:1},
+{id:22,n:'Naranja (estimado por porción)',u:'u',pp:500,cp:1,cda:0,e:1},
+{id:23,n:'Pimienta en granos',u:'g',pp:15000,cp:1000,cda:0,e:1},
+{id:24,n:'Queso rallado (55 ml, estimado)',u:'u',pp:1000,cp:1,cda:0,e:1},
+{id:25,n:'Bandeja teriyaki',u:'u',pp:200,cp:1,cda:0,e:1},
+{id:26,n:'Bolsa cobertora',u:'u',pp:100,cp:1,cda:0,e:1},
+{id:27,n:'Semillas de sésamo (estimado por porción)',u:'u',pp:200,cp:1,cda:0,e:1},
+{id:28,n:'Pimientos (tanda de picante)',u:'u',pp:2250,cp:1,cda:0,e:0},
+{id:29,n:'Tomate (tanda de picante)',u:'u',pp:500,cp:1,cda:0,e:0},
+{id:30,n:'Ají (tanda de picante)',u:'u',pp:100,cp:1,cda:0,e:0}],
+prep:[
+{id:1,n:'Marinada',rinde:800,u:'g de pollo',lin:[L(3,2,'cdita'),L(4,6,'cda'),L(5,4,'cda'),L(6,1,'cdita'),L(7,1,'cda'),L(8,2,'cda'),L(9,1),L(10,1)]},
+{id:2,n:'Salsa Crazy',rinde:250,u:'ml',e:0,lin:[L(13,180),L(14,60),L(15,10)]},
+{id:3,n:'Salsa Chicfila',rinde:225,u:'ml',e:0,lin:[L(13,120),L(16,60),L(17,30),L(18,21)]},
+{id:4,n:'Salsa barbacoa (marinado de sándwiches)',rinde:335,u:'ml',e:1,lin:[L(19,60),L(16,240),L(18,28),L(20,15)]},
+{id:5,n:'Salsa teriyaki',rinde:5,u:'cucharadas',e:0,lin:[L(19,60),L(18,21)]},
+{id:6,n:'Salsa del Pollo Frito (mitad Crazy, mitad Chicfila)',rinde:55,u:'ml (1 potecito)',e:0,lin:[LP(2,27.5),LP(3,27.5)]},
+{id:7,n:'Salsa picante',rinde:6.5,u:'potecitos',e:1,lin:[L(28,1),L(29,1),L(30,1)]}],
+prod:[
+{id:1,n:'Pollo Frito',p:14000,m:55,lin:[L(1,365),L(2,350),LP(1,365),L(11,1),L(12,1),LP(6,55)]},
+{id:2,n:'Pollo Teriyaki',p:13000,m:60,lin:[L(1,316),L(21,1),L(19,80),L(22,1),L(18,21),L(20,15),L(23,2),L(24,1),L(25,1),L(12,1),L(26,1),L(27,1),LP(5,5)]},
+{id:3,n:'Papas Crazy',p:10500,m:0,lin:[]},
+{id:4,n:'Combo Crazy',p:25000,m:0,lin:[]},
+{id:5,n:'Combo Primo',p:23000,m:0,lin:[]},
+{id:6,n:'Combo Cumpa',p:26000,m:0,lin:[]},
+{id:7,n:'Sándwich De la Tía',p:14000,m:0,lin:[]},
+{id:8,n:'Sándwich Del Tío',p:14000,m:0,lin:[]}],
+rec:[{n:'Aceite de freír (bidón 4,5 L)',m:15000,k:2}]};
+let S;try{S=JSON.parse(localStorage.getItem(K))}catch(e){}
+if(!S||!S.prod)S=JSON.parse(JSON.stringify(D));
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+const f=n=>(n<0?'-$':'$')+Math.abs(Math.round(n)).toLocaleString('es-AR');
+const f2=n=>'$'+n.toLocaleString('es-AR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const pc=n=>isFinite(n)?(Math.round(n*1000)/10).toLocaleString('es-AR')+'%':'–';
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+const ING=id=>S.ing.find(x=>x.id===id),PRE=id=>S.prep.find(x=>x.id===id);
+const baseQty=(g,l)=>l.uc==='cda'?l.c*(g.cda||0):l.uc==='cdita'?l.c*(g.cda||0)/3:l.c;
+const lineCost=l=>{
+ if(l.t==='p'){const p=PRE(l.r);return p&&p.rinde?prepCost(p)/p.rinde*l.c:0}
+ const g=ING(l.r);return g&&g.cp?g.pp/g.cp*baseQty(g,l):0};
+const sumL=lin=>lin.reduce((a,l)=>a+lineCost(l),0);
+const busy=new Set();
+const prepCost=p=>{if(busy.has(p.id))return 0;busy.add(p.id);try{return sumL(p.lin)}finally{busy.delete(p.id)}};
+const weekly=()=>S.rec.reduce((a,r)=>a+(r.k>0?r.m/r.k:0),0);
+const shared=()=>S.nf>0?weekly()/S.nf:0;
+const calc=x=>{const d=sumL(x.lin),c=d+shared(),g=x.p-c,mg=x.p?g/x.p:0,den=1-x.m/100;
+ return{d,c,g,mg,sug:den>0?Math.ceil(c/den/500)*500:0}};
+const U=(k,i,fl,el,num)=>{S[k][i][fl]=num?(el.valueAsNumber||0):el.value;R()};
+const UL=(k,i,j,fl,el,num)=>{S[k][i].lin[j][fl]=num?(el.valueAsNumber||0):el.value;R()};
+const US=(k,i,j,el)=>{const l=S[k][i].lin[j];l.t=el.value[0];l.r=+el.value.slice(1);l.uc='b';R()};
+const UE=(i,el)=>{S.ing[i].e=el.checked?1:0;R()};
+const UG=(fl,el)=>{S[fl]=el.valueAsNumber||0;R()};
+const addL=(k,i)=>{S[k][i].lin.push(L(S.ing.length?S.ing[0].id:0,0));R()};
+const delL=(k,i,j)=>{S[k][i].lin.splice(j,1);R()};
+const add=k=>{
+ if(k==='prod'){S.prod.push({id:S.nid++,n:'Nuevo producto',p:0,m:55,lin:[]});S.sel=S.prod.length-1;S.t=1}
+ if(k==='ing')S.ing.push({id:S.nid++,n:'Nuevo insumo',u:'g',pp:0,cp:1,cda:0,e:1});
+ if(k==='prep')S.prep.push({id:S.nid++,n:'Nueva preparación',rinde:1,u:'porciones',lin:[]});
+ if(k==='rec')S.rec.push({n:'Gasto',m:0,k:1});R()};
+const del=(k,i)=>{
+ if(k==='ing'){const id=S.ing[i].id;S.prod.concat(S.prep).forEach(x=>x.lin=x.lin.filter(l=>!(l.t==='i'&&l.r===id)))}
+ if(k==='prep'){const id=S.prep[i].id;S.prod.concat(S.prep).forEach(x=>x.lin=x.lin.filter(l=>!(l.t==='p'&&l.r===id)))}
+ S[k].splice(i,1);if(S.sel>=S.prod.length)S.sel=Math.max(0,S.prod.length-1);R()};
+const reset=()=>{if(confirm('¿Volver a los valores iniciales? Se pierden tus cambios.')){S=JSON.parse(JSON.stringify(D));R()}};
+const TB=['Resumen','Recetas','Preparaciones','Insumos','Gastos compartidos'];
+const state=(x,r)=>r.mg>=x.m/100-1e-9?['ok','En objetivo']:r.mg>=0?['warn','Subir precio']:['bad','Perdés plata'];
+
+function LE(k,i,lin,pa){
+ const tot=sumL(lin)||1;
+ const opts=cur=>S.ing.map(g=>`<option value="i${g.id}" ${cur==='i'+g.id?'selected':''}>${esc(g.n)}</option>`).join('')+
+  (S.prep.filter(p=>!(k==='prep'&&S.prep[i]===p)).map(p=>`<option value="p${p.id}" ${cur==='p'+p.id?'selected':''}>Preparación · ${esc(p.n)}</option>`).join(''));
+ const rows=lin.map((l,j)=>{
+  const g=l.t==='i'?ING(l.r):null,p=l.t==='p'?PRE(l.r):null,o=(v,t)=>`<option value="${v}" ${l.uc===v?'selected':''}>${t}</option>`,c=lineCost(l);
+  const un=g?`<select onchange="UL('${k}',${i},${j},'uc',this)">${o('b',esc(g.u))}${g.cda?o('cda','cucharada')+o('cdita','cucharita'):''}</select>`:`<span class="mut">${p?esc(p.u):''}</span>`;
+  return `<div class="line" style="--w:${Math.min(100,c/tot*100).toFixed(1)}%"><select onchange="US('${k}',${i},${j},this)">${opts(l.t+l.r)}</select>
+  <input type="number" step="any" value="${l.c}" aria-label="Cantidad" onchange="UL('${k}',${i},${j},'c',this,1)">${un}
+  <b class="lc">${f(c)}</b><button class="x" aria-label="Quitar" onclick="delL('${k}',${i},${j})">×</button></div>`}).join('');
+ return `<div class="lines">${rows}</div><div class="ltot"><span>Total</span><b>${f(sumL(lin))}</b></div>
+ <button class="add" onclick="addL('${k}',${i})">+ Ingrediente</button>`}
+
+function vRes(){
+ const sh=shared(),est=S.ing.filter(g=>g.e).length,pe=S.prep.filter(p=>p.e).length;
+ const cards=S.prod.map((x,j)=>{
+  const nm=`<input class="name" value="${esc(x.n)}" aria-label="Nombre" onchange="U('prod',${j},'n',this)">`;
+  const inp=`<div class="fl"><label class="f">Precio de venta<input type="number" value="${x.p}" onchange="U('prod',${j},'p',this,1)"></label>
+   <label class="f">Margen objetivo %<input type="number" value="${x.m}" onchange="U('prod',${j},'m',this,1)"></label></div>`;
+  if(!x.lin.length)return `<article class="card empty"><div class="ph">${nm}<span class="chip mut">Sin receta</span></div>
+   ${inp}<p>Todavía no tiene receta, así que no se puede calcular el margen.</p><div class="foot"><span></span><a onclick="S.sel=${j};S.t=1;R()">Cargar receta →</a></div></article>`;
+  const r=calc(x),st=state(x,r),P=x.p||1,w1=Math.min(100,r.d/P*100),w2=Math.min(100-w1,sh/P*100),w3=Math.max(0,100-w1-w2);
+  return `<article class="card prod"><div class="ph">${nm}<span class="chip ${st[0]}">${st[1]}</span></div>
+  <div class="mid"><div class="ring" style="--p:${Math.max(0,Math.min(100,r.mg*100)).toFixed(1)}"><div><b>${pc(r.mg)}</b><small>margen</small></div></div>${inp}</div>
+  <div class="bar" title="De cada peso que cobrás"><i class="b1" style="width:${w1}%"></i><i class="b2" style="width:${w2}%"></i><i class="b3" style="width:${w3}%"></i></div>
+  <div class="leg"><span><u style="background:#f6f3ee"></u>Ingredientes <b>${f(r.d)}</b></span><span><u style="background:#8a4a22"></u>Compartidos <b>${f(sh)}</b></span><span><u style="background:var(--ac)"></u>Ganancia <b class="${r.g<0?'bad':''}">${f(r.g)}</b></span></div>
+  <div class="foot"><span>Precio para ${x.m}%<br><b>${f(r.sug)}</b>${r.sug>x.p?` <small class="warn">+${f(r.sug-x.p)}</small>`:''}</span><a onclick="S.sel=${j};S.t=1;R()">Ver receta →</a></div></article>`}).join('');
+ return `${est||pe?`<div class="alert"><span>⚠</span><span>Hay ${est} insumo(s) y ${pe} preparación(es) con datos estimados (marcados en <b>Insumos</b> y <b>Preparaciones</b>: precios, cucharadas, cuántas porciones rinde una tanda). Los márgenes son tan confiables como esos datos.</span></div>`:''}
+ <div class="grid">${cards}</div>
+ <button class="add" onclick="add('prod')">+ Producto</button>
+ <p class="note">Margen = ganancia ÷ precio de venta. El anillo muestra qué parte del precio es ganancia; la barra muestra a dónde va cada peso que cobrás. Precio para el objetivo = costo total ÷ (1 − margen objetivo), redondeado hacia arriba a múltiplos de $500. Cada producto tiene su propio margen objetivo.</p>
+ <button class="add" onclick="reset()">Restablecer valores iniciales</button>`}
+
+function vRec(){
+ if(!S.prod.length)return `<button class="add" onclick="add('prod')">+ Producto</button>`;
+ const x=S.prod[S.sel],r=calc(x),cl=state(x,r)[0];
+ const sel=S.prod.map((p,j)=>`<option value="${j}" ${j===S.sel?'selected':''}>${esc(p.n)}</option>`).join('');
+ return `<div class="row"><label class="f" style="flex:1;min-width:200px">Producto<select onchange="S.sel=+this.value;R()">${sel}</select></label>
+ <label class="f" style="width:130px">Precio de venta<input type="number" value="${x.p}" onchange="U('prod',S.sel,'p',this,1)"></label>
+ <label class="f" style="width:130px">Margen objetivo %<input type="number" value="${x.m}" onchange="U('prod',S.sel,'m',this,1)"></label>
+ <button class="x" onclick="if(confirm('¿Borrar este producto?'))del('prod',S.sel)">Borrar ×</button></div>
+ ${x.lin.length?`<div class="kpi"><div><small>Ingredientes</small><b>${f(r.d)}</b></div><div><small>Gastos compartidos</small><b>${f(shared())}</b></div><div><small>Costo total</small><b>${f(r.c)}</b></div><div><small>Ganancia</small><b class="${cl}">${f(r.g)}</b></div><div><small>Margen</small><b class="${cl}">${pc(r.mg)}</b></div><div class="hi"><small>Precio para ${x.m}%</small><b>${f(r.sug)}</b></div></div>`:''}
+ ${LE('prod',S.sel,x.lin,true)}
+ <p class="note">Las preparaciones (marinada, salsas) se cargan una vez en su pestaña y acá se usan por la cantidad que lleva cada porción. Ejemplo: la marinada rinde 800 g de pollo, así que 365 g de pollo usan 365 de marinada. La barra naranja de cada línea muestra cuánto pesa en el costo.</p>`}
+
+function vPrep(){
+ const blocks=S.prep.map((p,i)=>`<section class="card" style="margin-bottom:14px"><button class="x cx" title="Borrar" onclick="if(confirm('¿Borrar esta preparación?'))del('prep',${i})">×</button>
+ <div class="row"><label class="f" style="flex:1;min-width:180px">Nombre<input value="${esc(p.n)}" onchange="U('prep',${i},'n',this)"></label>
+ <label class="f" style="width:110px">Rinde<input type="number" step="any" value="${p.rinde}" onchange="U('prep',${i},'rinde',this,1)"></label>
+ <label class="f" style="width:150px">Unidad<input value="${esc(p.u)}" onchange="U('prep',${i},'u',this)"></label>
+ <label class="tog" style="margin-bottom:10px"><input type="checkbox" ${p.e?'checked':''} onchange="S.prep[${i}].e=this.checked?1:0;R()"> <span class="${p.e?'warn':''}">${p.e?'⚠ Rinde estimado':'Rinde real'}</span></label>
+ <div style="margin-right:36px"><span class="cap">Por tanda</span><div class="big">${f(prepCost(p))}</div></div>
+ <div><span class="cap">Por ${esc(p.u.split(' ')[0])}</span><div class="big">${f2(p.rinde?prepCost(p)/p.rinde:0)}</div></div></div>
+ ${LE('prep',i,p.lin,false)}</section>`).join('');
+ return `${blocks}<button class="add" onclick="add('prep')">+ Preparación</button>`}
+
+function vIng(){
+ const cards=S.ing.map((g,i)=>`<article class="card" style="padding:14px"><button class="x cx" aria-label="Borrar" onclick="del('ing',${i})">×</button>
+ <input class="name" style="font:600 15px Inter,sans-serif!important;letter-spacing:0;width:calc(100% - 30px)" value="${esc(g.n)}" onchange="U('ing',${i},'n',this)">
+ <div style="margin:8px 0 10px"><span class="big">${f2(g.cp?g.pp/g.cp:0)}</span> <span class="mut">por ${esc(g.u)}</span></div>
+ <div class="g3"><label class="f">Precio<input type="number" value="${g.pp}" onchange="U('ing',${i},'pp',this,1)"></label>
+ <label class="f">Paquete<input type="number" step="any" value="${g.cp}" onchange="U('ing',${i},'cp',this,1)"></label>
+ <label class="f">Unidad<select onchange="U('ing',${i},'u',this)">${['g','ml','u'].map(u=>`<option ${g.u===u?'selected':''}>${u}</option>`).join('')}</select></label></div>
+ <div class="row" style="margin:10px 0 0;align-items:center"><label class="f" style="width:120px">${esc(g.u)} / cucharada<input type="number" step="any" value="${g.cda}" onchange="U('ing',${i},'cda',this,1)"></label>
+ <label class="tog"><input type="checkbox" ${g.e?'checked':''} onchange="UE(${i},this)"> <span class="${g.e?'warn':''}">${g.e?'⚠ Estimado':'Dato real'}</span></label></div></article>`).join('');
+ return `<div class="grid">${cards}</div><button class="add" onclick="add('ing')">+ Insumo</button>
+ <p class="note">"Paquete" es la cantidad que trae lo que comprás por ese precio (en g, ml o unidades). "Por cucharada" solo hace falta si cargás cantidades en cucharadas (la cucharita se calcula como un tercio). Tildá ⚠ lo que sea una estimación.</p>`}
+
+function vGas(){
+ const cards=S.rec.map((r,i)=>`<article class="card" style="padding:14px"><button class="x cx" aria-label="Borrar" onclick="del('rec',${i})">×</button>
+ <input class="name" style="font:600 15px Inter,sans-serif!important;letter-spacing:0;width:calc(100% - 30px)" value="${esc(r.n)}" onchange="U('rec',${i},'n',this)">
+ <div style="margin:8px 0 10px"><span class="big">${f(r.k>0?r.m/r.k:0)}</span> <span class="mut">por fin de semana</span></div>
+ <div class="g3" style="grid-template-columns:1fr 1fr"><label class="f">Monto de la compra<input type="number" value="${r.m}" onchange="U('rec',${i},'m',this,1)"></label>
+ <label class="f">Se compra cada (fines de semana)<input type="number" step="any" value="${r.k}" onchange="U('rec',${i},'k',this,1)"></label></div></article>`).join('');
+ return `<div class="kpi"><div class="hi"><small>Gastos compartidos por fin de semana</small><b>${f(weekly())}</b></div><div><small>Por producto vendido</small><b>${f(shared())}</b></div>
+ <div><label class="f" style="margin-top:2px">Productos vendidos por fin de semana<input type="number" value="${S.nf}" onchange="UG('nf',this)"></label></div></div>
+ <div class="grid">${cards}</div><button class="add" onclick="add('rec')">+ Gasto</button>
+ <p class="note">Acá van los gastos que no dependen de un producto en particular: aceite, descartables, aderezos, cheddar, gas, luz. Se reparten en partes iguales entre los productos vendidos. El promedio inicial (14) sale de contar tus pedidos de septiembre: ~11 en el fin de semana del 12–13 y ~17 en el del 18–20. Cuanto menos vendés, más pesa cada gasto en cada producto.</p>`}
+
+function R(){
+ save();
+ const rs=S.prod.filter(x=>x.lin.length).map(x=>({x,r:calc(x)})),ok=rs.filter(a=>a.r.mg>=a.x.m/100-1e-9).length,avg=rs.length?rs.reduce((a,b)=>a+b.r.mg,0)/rs.length:0;
+ $('#hs').innerHTML=`<div><small>En objetivo</small><b>${ok} / ${rs.length}</b></div><div><small>Margen promedio</small><b>${rs.length?pc(avg):'–'}</b></div><div><small>Compartidos por finde</small><b>${f(weekly())}</b></div>`;
+ $('#tabs').innerHTML=TB.map((t,i)=>`<button class="${S.t===i?'on':''}" onclick="S.t=${i};R()">${t}</button>`).join('');
+ $('#v').innerHTML=[vRes,vRec,vPrep,vIng,vGas][S.t]();
+}
+function $(s){return document.querySelector(s)}
+R();
+</script></body></html>
